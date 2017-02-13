@@ -30,7 +30,7 @@ class app
         // ==============================
         //  选择下载器
         // ==============================
-        echo "============================= Step One ============================\n";
+        echo "-----------------------> Select Downloader <-----------------------\n";
         $dlerList = $this->getDownloaderList();
         $dlerClassName = null;
         do {
@@ -65,7 +65,7 @@ class app
         // ==============================
         //  输入URL地址
         // ==============================
-        echo "============================= Step Two ============================\n";
+        echo "---------------------------> Input URL <---------------------------\n";
         do {
             echo "Please Input A Page Link. Downloader Can Save Any Pic On This Page.\n";
             $dlUrl = lib::readInput('Input URL: ');
@@ -84,29 +84,9 @@ class app
         } while (true);
         
         // ==============================
-        //  最后的配置
-        // ==============================
-        /*echo "============================= Good Job ============================\n";
-        echo "This Is The Last Configuration. ^_^\n";
-        // 1.请求携带 Cookie
-        do {
-            // echo "1) Set Request Page Carry Cookie. (Can Be Empty)\n";
-            // echo " Q:How to get the Cookie String?\n";
-            // echo " A:Open Browser Console And Input 'document.cookie' To Get String.\n";
-            // echo " Emm... One More Thing: Leave Blank Will Use Config File Cookie.\n";
-            $carryCookie = lib::readInput('Input Cookie: ');
-            // 如果 当前输入的内容 为空，则使用配置文件默认的值
-            $dler -> carryCookie = !empty($carryCookie)?$carryCookie:$dlCarryCookie;
-            lib::nowShow("Cookie Is Set\n", "_o");
-            break;
-        } while (true);*/
-        
-        echo "\n";
-        
-        // ==============================
         //  根据 URL 执行对应操作
         // ==============================
-        echo "============================= Running! ============================\n";
+        echo "-------------------------> Running! Now! <-------------------------\n";
         // 首先完成最后的配置
         $dler -> maxPicNum = $this->conf['defaultMaxPicNum']; /** @see $conf */
         $dler -> carryCookie = $this->conf['defaultCarryCookie'];
